@@ -35,7 +35,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-            outputFile.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}");
+            outputFile.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}~|~{entry._rating}");
             }
         }    
         Console.WriteLine("Journal saved.");
@@ -56,11 +56,7 @@ public class Journal
         {
             string[] parts = line.Split("~|~");
 
-            Entry entry = new Entry();
-            entry._date = parts[0];
-            entry._promptText = parts[1];
-            entry._entryText = parts[2];
-
+            Entry entry = new Entry(parts[0], parts[1], parts[2], parts[3]);
             _entries.Add(entry);
         }
         Console.WriteLine("Journal loaded.");

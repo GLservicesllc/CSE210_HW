@@ -36,12 +36,7 @@ class Program
                     rating = Console.ReadLine();
                 }
 
-                Entry entry = new Entry();
-                entry._date = today;
-                entry._promptText = prompt;
-                entry._entryText = response;
-                entry._rating = rating; // Added a rating for user to reflect on their day
-
+                Entry entry = new Entry(today, prompt, response, rating);
                 journal.AddEntry(entry);
             }
             else if (choice == "2")
