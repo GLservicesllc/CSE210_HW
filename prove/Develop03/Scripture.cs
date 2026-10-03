@@ -11,7 +11,7 @@ public class Scripture
                     .Select(w => new Word(w))
                     .ToList();
     }
-// This hides a specific number of random words in the scripture to help with memorization. 
+// This hides a specific number of random words in the scripture to help with memorization.
     public void HideRandomWords(int count)
     {
         var visible = _words.Where(w => !w.IsHidden()).ToList();
@@ -26,7 +26,8 @@ public class Scripture
     }
 
     public bool IsCompletelyHidden() => _words.All(w => w.IsHidden());
-
+    public int GetHiddenCount() => _words.Count(w => w.IsHidden());
+    public int GetTotalCount() => _words.Count();
     public string GetDisplayText()
     {
         string text = string.Join(" ", _words.Select(w => w.GetDisplayText()));
