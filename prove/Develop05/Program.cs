@@ -1,9 +1,11 @@
-using System;
-
+/// <summary>
+/// Exceeded Requirements by adding a negative goal type, a level system, and level feedback.
+/// </summary>
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        GoalManager manager = new GoalManager();
+        manager.Start();
     }
 }
